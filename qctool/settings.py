@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'qctool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'qctooldb',
-        'USER': 'postgresuser',
-        'PASSWORD':'password',
-        'HOST':'localhost',
-        'PORT':'',
+        'NAME': os.environ.get('POSTGRES_DB', 'qctooldb'),
+        'USER': os.environ.get('POSTGRES_USER', 'postgresuser'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', ''),
     }
 }
 
