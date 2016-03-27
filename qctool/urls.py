@@ -18,6 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^fileuploads/', include('fileuploads.urls')),
-    url(r'^outputs/', include('outputs.urls')),
     url(r'^admin/', admin.site.urls),
 ]
